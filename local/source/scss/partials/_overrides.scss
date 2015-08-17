@@ -27,3 +27,11 @@
 	}
 }
 
+// login.php left hand signup callout
+#LoginForm {
+	.grid__item{
+		&.one-half:first-child {
+			display: none;
+		}
+	}
+}

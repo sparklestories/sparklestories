@@ -1,0 +1,1 @@
+$(document).ready(function(){function o(o){$.each(o,function(o,n){console.debug($(this))})}console.log("app.js"),o([$(".story")])});

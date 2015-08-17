@@ -1,0 +1,398 @@
+%%Panel.HTMLHead%%
+    <body id="home">
+        %%Panel.DrawerMenu%%
+        <div class="page">
+            %%Panel.Header%%
+            <div class="container">
+	            <div>
+					<audio id="player">
+						<source src='http://honorama.org/radioactivegavin/NW/Ratatat/03_Loud%20Pipes.mp3' type="audio/mpeg">
+					</audio>
+				</div>
+				<div>
+				    <button id="rewindObj" class="bg-purple" type="button">&lt;&lt;</button>
+				    <button id="playObj" class="bg-purple" type="button">Play</button>
+				    <button id="fastObj" class="bg-purple" type="button">&gt;&gt;</button>
+				    <span id="seekObjContainer">
+				    	<input type="text" id="seekObj" name="seekObj" value="">
+				    </span>
+				   
+				    <span id="soundObjContainer">
+				   		<input type="text" id="soundObj" name="soundObj" value="">
+				   		<button id="muteObj" class="bg-purple" type="button">M</button>
+				    	<button id="loudObj" class="bg-purple" type="button">L</button>
+				   	</span>
+
+
+				    <div class="duration">
+				    	<div id="buffer"></div>
+				    	<div id="progress"></div>
+				    </div>
+				</div>
+			</div>
+            
+            <!--
+            <div class="groups-container">
+	            <div class="group">
+	                <div class="large">
+	                    <div class="story b_red">
+                        	<div class="left">
+                        		left side
+                        	</div>
+                        	<div class="right">
+                        		right side
+                        	</div>
+	                    </div>
+					</div>
+				</div>
+				<div class="group">
+	                <div class="small">
+	                    <div class="story b_yellow">
+	                        <div class="left">
+	                        	left
+	                        </div>
+	                        <div class="right">
+	                        	<img src="http://placehold.it/350x150">
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="small">
+	                    <div class="story b_green">
+	                    	<div class="inner">
+		                        small story Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="small">
+	                    <div class="story b_purple">
+	                    	<div class="inner">
+		                        small story Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</div>
+	                    </div>
+	                </div>
+	                <div class="small">
+	                    <div class="story b_orange">
+	                        <div class="left">
+	                        	left
+	                        </div>
+	                        <div class="right">
+	                        	<img src="http://placehold.it/350x150">
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+			</div>
+
+			<div class="gallery-container">
+	            <div class="gallery">
+
+                    <div class="item">
+                    	<div class="story b_red">
+                    		item
+                    	</div>
+                    </div>
+                    <div class="item">
+                    	<div class="story b_orange">
+                    		item
+                    	</div>
+                    </div>
+                    <div class="item">
+                    	<div class="story b_green">
+                    		item
+                    	</div>
+                    </div>
+                    <div class="item">
+                    	<div class="story b_purple">
+                    		item
+                    	</div>
+                    </div>
+                    <div class="item">
+                    	<div class="story b_yellow">
+                    		item
+                    	</div>
+                    </div>
+                    <div class="item">
+                    	<div class="story b_green">
+                    		item
+                    	</div>
+                    </div>
+                    <div class="item">
+                    	<div class="story b_red">
+                    		item
+                    	</div>
+                    </div>
+                    <div class="item">
+                    	<div class="story b_purple">
+                    		item
+                    	</div>
+                    </div>
+					
+				</div>
+			</div> -->
+
+			<div class="wide bg-is-gray">
+				<div class="container">
+					%%Panel.HomeRecentBlogs%%
+				</div>
+			</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="%%ASSET_js/ion.rangeSlider.js%%" type="text/javascript"></script>
+<!-- <script src="%%ASSET_js/app.js%%" type="text/javascript"></script> -->
+<script>
+	$.noConflict();
+	
+	document.ready = function() {
+
+		// Variables
+		// ----------------------------------------------------------
+		// audio embed object
+		var player = document.getElementById('player'),
+			seekAmount = 15;
+		isPlaying = false;
+
+
+		// Seek Init
+		// ----------------------------------------------------------
+		var seek = jQuery('#seekObj').ionRangeSlider({
+			hide_min_max: true,
+			keyboard: true,
+			min: 0,
+			max: player.duration,
+			from: 0,
+			step: 1,
+			onStart: function(data) {
+				// console.debug("onStart seek", data);
+			},
+			onChange: function(data) {
+				// console.debug("onChange seek", data);
+			},
+			onFinish: function(data) {
+				console.debug("onFinish seek", isPlaying);
+				player.currentTime = data.from;
+				if (player.paused === true && isPlaying === true) {
+            		player.play();
+            	}
+			},
+			onUpdate: function(data) {
+				// console.debug("onUpdate seek", data);
+			},
+		});
+
+		// Seek Variables
+		// ----------------------------------------------------------
+		var thumb = document.getElementsByClassName('irs-slider')[0],
+			progress = document.getElementsByClassName('irs-bar')[0];
+		
+
+		// Seek Listeners
+		// ----------------------------------------------------------
+		player.addEventListener('timeupdate', updateScrubber);
+		thumb.addEventListener('mousedown', pausePlayer);
+		
+
+		// Seek Methods
+		// ----------------------------------------------------------
+		// pause on seek thumb drag
+		function pausePlayer(e) {
+			console.log('pause', e);
+			e.preventDefault();
+			if (player.paused === false) {
+            	player.pause();
+            }
+		}
+
+		// buffer update
+		// player.addEventListener('progress', function() {
+		// 	if(player.buffered.length > 0) {
+		// 		var bufferEnd = player.buffered.end(player.buffered.length - 1);
+		// 		var duration = player.duration;
+		// 		if(duration > 0) {
+		// 			document.getElementById('buffer').style.width = ((bufferEnd / duration) * 100) + '%';
+		// 		}
+		// 	}
+		// });
+
+		// progress and thumb update
+		
+		function updateScrubber(e) {
+			var duration = player.duration;
+			if(duration > 0) {
+				var perc = ((player.currentTime / duration) * 100) + '%';
+				thumb.style.left = perc;
+				progress.style.width = perc;
+				// seek.data("ionRangeSlider").from = ((player.currentTime / duration) * 100);
+				// seek.data("ionRangeSlider").update({
+				// 	from: ((player.currentTime / player.duration) * 100)
+				// });
+			}
+		}
+
+
+		// Sound Init
+		// ----------------------------------------------------------
+		var vol = 0.5;
+		if(sessionStorage.getItem('volume')) {
+			vol = sessionStorage.getItem('volume');
+		}
+
+		var sound = jQuery('#soundObj').ionRangeSlider({
+			hide_min_max: true,
+			keyboard: true,
+			min: 0,
+			max: 1,
+			from: vol,
+			step: 0.001,
+			onStart: function(data) {
+				// console.debug("onStart sound", data);
+				player.volume = data.from;
+			},
+			onChange: function(data) {
+				// console.debug("onChange sound", data);
+				player.volume = data.from;
+				sessionStorage.setItem('volume', data.from);
+			},
+			onFinish: function(data) {
+				// console.debug("onFinish sound", data);
+			},
+			onUpdate: function(data) {
+				// console.debug("onUpdate sound", data);
+			},
+		});
+
+		// Sound Variables
+		// ----------------------------------------------------------
+		var muteBtn = document.getElementById('muteObj'),
+			loudBtn = document.getElementById('loudObj'),
+			thumbSound = document.getElementsByClassName('irs-slider')[1],
+			progressSound = document.getElementsByClassName('irs-bar')[1],
+			playerVol = 0,
+			isMuted = false;
+
+
+		// Sound Listeners
+		// ----------------------------------------------------------
+		muteBtn.addEventListener('click', mute);
+		loudBtn.addEventListener('click', loud);
+
+
+		// Controls Variables
+		// ----------------------------------------------------------
+		var rewindBtn = document.getElementById('rewindObj'),
+			playBtn = document.getElementById('playObj'),
+			fastBtn = document.getElementById('fastObj');
+
+
+		// Controls Listeners
+		// ----------------------------------------------------------
+		rewindBtn.addEventListener('click', seekBackward);
+		playBtn.addEventListener('click', togglePlay);
+		fastBtn.addEventListener('click', seekForward);
+
+
+		// Controls & Sounds Methods
+		// ----------------------------------------------------------
+		function seekBackward(e) {
+			console.debug("seek backward");
+			player.currentTime = player.currentTime - seekAmount;
+		}
+
+		function togglePlay(e) {
+			if (player.paused === false) {
+	            player.pause();
+	            playObj.textContent = "Play";
+	            isPlaying = false;
+	        } else {
+	            player.play();
+	            playObj.textContent = "Pause";
+	            isPlaying = true;
+	        }
+		}
+
+		function seekForward(e) {
+			console.debug("seek forward");
+			player.currentTime = player.currentTime + seekAmount;
+		}
+
+		function mute(e) {
+			// console.debug('get mute');
+			if(isMuted === false) {
+				playerVol = player.volume;
+				player.volume = 0;
+				updateVolumeSrubber(0);
+				isMuted = true;
+			} else {
+				player.volume = playerVol;
+				updateVolumeSrubber(playerVol * 100);
+				isMuted = false;
+			}
+		}
+
+		function updateVolumeSrubber(vol) {
+			vol = vol + '%';
+			thumbSound.style.left = vol;
+			progressSound.style.width = vol;
+		}
+
+		function loud(e) {
+			console.debug('get loud');
+			player.volume = 1;
+			updateVolumeSrubber(100);
+		}
+
+		function seekAnywhere() {
+			//
+		}
+
+
+		// set columns to equal height
+		var maxHeight = 0;
+		setEqualColHeights($('.articles .inner'));
+
+
+		function setEqualColHeights(el) {
+			el.each(function() {
+				if($(this).height() > maxHeight) {
+					maxHeight = $(this).height();
+				}
+			});
+			el.height(maxHeight);
+		}
+	}
+</script>
+
+
+            <div class="main">
+                <div class="inner">
+                    %%Panel.WrapperBanner%%
+                    <div class="Content Widest" id="LayoutColumn1">
+                        %%Panel.HomeSlideShow%%
+                        %%Banner.TopBanner%%
+                        %%Discount.FreeShippingEligibility%%
+                        %%Panel.HomeFeaturedProducts%%
+                        %%Panel.SideTopSellers%%
+                        %%Panel.HomeNewProducts%%
+                        %%Banner.BottomBanner%%
+                    </div>
+                </div>
+            </div>
+            %%Panel.Footer%%
+        </div>
+    </body>
+</html>
