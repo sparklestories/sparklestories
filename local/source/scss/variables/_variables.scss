@@ -1,0 +1,44 @@
+// Fonts
+// ------------------------------------------------------------------------------------------------
+$font-primary: 											"museo-sans", sans-serif;
+$font-secondary:										Helvetica, sans-serif;
+
+
+// Colors
+// ------------------------------------------------------------------------------------------------
+$color-bg:												#F6F6F6;
+$color-black:											#000000;
+$color-blue:											#4389AD;
+$color-blue-light:										#8FB5C4;
+$color-card-border:										#CACACA;
+$color-gray-dark:										#565656;
+$color-gray-light:										#B1B1B1;
+$color-green:											#7DA13B;
+$color-green-light:										#92C24B;
+$color-orange:											#E07C54;
+$color-orange-light:									#FF9466;
+$color-purple:											#AB5472;
+$color-purple-light:									#CC7696;
+$color-red:												#EE7C6C;
+$color-red-light:										#FF6F69;
+$color-section-border:									#DBDBDB;
+$color-teal:											#45B09B;
+$color-teal-light:										#94CCB2;
+$color-white:											#FFFFFF;
+$color-yellow:											#FFC661;
+$color-yellow-light:									#FFDF82;
+
+
+// Transitions
+// ------------------------------------------------------------------------------------------------
+$time-trans-anchor:										0.2s;
+$ease-trans-anchor:										ease-out;
+
+
+// Media Querie Sizes
+// ------------------------------------------------------------------------------------------------
+$size-mobile:											400px;
+$size-phablet:											550px;
+$size-tablet:											750px;
+$size-desktop:											1000px;
+$size-hd:												1200px;

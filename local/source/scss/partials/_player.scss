@@ -1,0 +1,58 @@
+#rewindObj,
+#playObj,
+#fastObj,
+#muteObj,
+#loudObj {
+	background-color: $color-purple;
+    border: 0 none;
+    border-radius: 100%;
+    color: $color-white;
+    cursor: pointer;
+    font-family: $font-secondary;
+    font-size: 14px;
+    outline: none;
+}
+
+#rewindObj,
+#fastObj {
+	height: 50px;
+	width: 50px;
+}
+
+#playObj {
+    height: 100px;
+    width: 100px;
+}
+
+#muteObj,
+#loudObj {
+	height: 30px;
+	width: 30px;
+}
+
+#loudObj {
+    float: right;
+}
+
+.thumb {
+	background-color: $color-purple;
+	border-radius: 100%;
+	cursor: pointer;
+}
+
+.bg-purple {
+    background-color: $color-purple;
+}
+
+#buffer {
+    background-color: red;
+    height: 20px;
+    width: 0px;
+}
+
+#progress {
+    background-color: orange;
+    height: 20px;
+    margin-top: -20px;
+    width: 0px;
+}

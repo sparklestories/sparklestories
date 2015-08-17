@@ -1,0 +1,29 @@
+.TopMenu,
+#Header,
+.PageMenu,
+.main,
+.footer-main,
+.footer-links,
+.newsletter-subscription {
+	> .inner {
+		@include container($size-hd);
+	}
+}
+
+// Home page featured product list
+#home,
+.productPage {
+	.ProductList {
+		margin: 0;
+
+		li  {
+			@include span(3 of 12);
+			padding: 0 0 20px 0;
+			
+			&:nth-child(4n) {
+				@include last;
+			}
+		}
+	}
+}
+

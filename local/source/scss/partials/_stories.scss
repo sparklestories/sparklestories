@@ -1,0 +1,153 @@
+// .groups-container {
+// 	@include container();
+// 	background-color: $color-bg;
+// 	height: 550px;
+// 	padding: 10px 5px;
+// }
+
+// .group {
+// 	@include span(6 of 12 nest);
+// 	height: 100%;
+
+// 	.large {
+// 		@include span(6 of 6);
+// 		height: 100%;
+// 	}
+
+// 	.small {
+// 		@include gallery(3 of 6);
+// 		height: 50%;
+		
+// 		&:nth-child(-n+2) {
+// 			padding-bottom: 5px;
+// 		}
+
+// 		&:nth-child(n+3) {
+// 			padding-top: 5px;
+// 		}
+// 	}
+// }
+
+// .story {
+// 	@include container;
+// 	background-color: $color-white;
+// 	border: 1px solid #F2F2F2;
+// 	border-bottom-width: 4px;
+// 	height: 100%;
+// 	padding: 20px;
+
+// 	.inner {
+// 		height: 100%;
+// 		overflow: hidden;
+// 	}
+	
+// 	.left,
+// 	.right {
+// 		@include span(6 of 12);
+// 	}
+
+// 	.left {
+// 		padding-left: 0;
+// 	}
+
+// 	.right {
+// 		padding-right: 0;
+// 	}
+
+// 	img {
+// 		max-width: 100%;
+// 	}
+// }
+
+// .gallery-container {
+// 	background-color: $color-bg;
+// 	padding: 10px 0 0 0;
+// }
+
+// .gallery {
+// 	@include container($size-hd);
+
+// 	.item {
+// 		@include span(2 of 12);
+// 		padding-bottom: 10px;
+// 	}
+// }
+
+.bg-is-gray {
+	background-color: $color-bg;
+	border-bottom: 1px solid $color-section-border;
+	border-top: 1px solid $color-section-border;
+	padding: 40px 0;
+}
+
+.wide {
+	width: 100%;
+}
+
+.articles {
+	color: $color-gray-dark;
+
+	.col {
+		@include span(4 of 12);
+
+		&:nth-child(3) {
+			@include last();
+		}
+	}
+
+	.inner {
+		background-color: $color-white;
+		border: 1px solid $color-card-border;
+	}
+
+	.img {
+		border-bottom: 1px solid $color-card-border;
+		max-height: 250px;
+		overflow: hidden;
+
+		img {
+			height: auto;
+			width: 100%;
+		}
+	}
+
+	.details {
+		padding: 20px;
+
+		a {
+			font-size: 2.2rem;
+		}
+
+		.date {
+			color: $color-gray-light;
+		}
+
+		p {
+			font-size: 1.5rem;
+			line-height: 2rem;
+		}
+	}
+}
+
+
+// Borders
+// ------------------------------------------------------------------------------------------------
+.b_green {
+	border-bottom-color: $color-green;
+}
+
+.b_orange {
+	border-bottom-color: $color-orange;
+}
+
+.b_purple {
+	border-bottom-color: $color-purple;
+}
+
+.b_red {
+	border-bottom-color: $color-red;
+}
+
+.b_yellow {
+	border-bottom-color: $color-yellow;
+}
