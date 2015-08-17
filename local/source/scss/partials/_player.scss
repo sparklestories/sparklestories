@@ -3,7 +3,7 @@
 #fastObj,
 #muteObj,
 #loudObj {
-	background-color: $color-purple;
+	background-color: $color-red-light;
     border: 0 none;
     border-radius: 100%;
     color: $color-white;
@@ -11,6 +11,12 @@
     font-family: $font-secondary;
     font-size: 14px;
     outline: none;
+    @include global-transition;
+
+    &:hover {
+        background-color: $color-red;
+        @include global-transition;
+    }
 }
 
 #rewindObj,
@@ -35,13 +41,13 @@
 }
 
 .thumb {
-	background-color: $color-purple;
+	background-color: $color-red-light;
 	border-radius: 100%;
 	cursor: pointer;
 }
 
 .bg-purple {
-    background-color: $color-purple;
+    background-color: $color-red-light;
 }
 
 #buffer {
