@@ -1,0 +1,18 @@
+// Alignment
+// ------------------------------------------------------------------------------------------------
+@mixin vertical-align {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// Transitions
+// ------------------------------------------------------------------------------------------------
+@mixin global-transition {
+	transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	}

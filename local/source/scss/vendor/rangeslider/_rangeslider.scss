@@ -55,7 +55,7 @@
     }
 
     .irs-slider {
-        border: 1px solid #000000;
+        border: 1px solid $color-red-light;
         border-radius: 100%;
         background-color: #FFFFFF;
         cursor: pointer;
@@ -207,7 +207,7 @@
     }
 
 .irs-bar {
-    background-color: #000000;
+    background-color: $color-red-light;
     background-position: 0 -60px;
     height: 5px;
     top: 25px;
@@ -215,7 +215,7 @@
 }
 
 .irs-bar-edge {
-    background-color: #000000;
+    background-color: $color-red-light;
 	background-position: 0 -90px;
 	border-radius: 5px 0 0 5px !important;
 	top: 25px;
